@@ -9,4 +9,30 @@
 
 
 
-const btn = document.querySelector('.switch')
+// plan ahead before coding
+// i want to select my button and my video container
+
+// VID 162.
+const btn = document.querySelector('.switch-btn');
+const video = document.querySelector('.video-container');
+
+btn.addEventListener('click', function(){
+    if(!btn.classList.contains('slide')){
+        // if the button does not have the slide class then add it.
+        btn.classList.add('slide')
+        // classList checks for the class if the class does NOT EXIST THEN ADD IT. 
+        video.pause();
+    }
+    else{
+        btn.classList.remove('slide')
+        // if the btn class does exist then remove it 
+        video.play();
+    }
+});
+
+// preloader
+const preloader = document.querySelector('.preloader');
+
+window.addEventListener('load',function(){
+    preloader.classList.add('hide-preloader');
+});
